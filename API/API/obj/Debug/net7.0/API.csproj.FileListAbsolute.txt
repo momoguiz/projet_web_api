@@ -31,3 +31,4 @@ C:\Users\momog\Desktop\ASP\API\API\obj\Debug\net7.0\refint\API.dll
 C:\Users\momog\Desktop\ASP\API\API\obj\Debug\net7.0\API.pdb
 C:\Users\momog\Desktop\ASP\API\API\obj\Debug\net7.0\API.genruntimeconfig.cache
 C:\Users\momog\Desktop\ASP\API\API\obj\Debug\net7.0\ref\API.dll
+C:\Users\momog\Desktop\ASP\API\API\bin\Debug\net7.0\Swagger.xml

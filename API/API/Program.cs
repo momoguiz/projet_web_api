@@ -1,4 +1,6 @@
 
+using Microsoft.OpenApi.Models;
+
 namespace API
 {
     public class Program
@@ -12,7 +14,21 @@ namespace API
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c=>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Démonstration Web API",
+                    Description = "API de demonstration de la création d'une web API.",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Mohamed Guirasssy",
+                        Email = "contact@mail.fr"
+                    }
+                });
+                string xmlPath = Path.Combine(AppContext.BaseDirectory, "Swagger.xml");
+                c.IncludeXmlComments(xmlPath);
+            });
 
             var app = builder.Build();
 
@@ -20,7 +36,11 @@ namespace API
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Démo API");
+                    c.RoutePrefix = string.Empty;
+                });
             }
 
             app.UseHttpsRedirection();

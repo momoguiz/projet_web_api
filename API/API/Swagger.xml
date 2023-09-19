@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API</name>
+    </assembly>
+    <members>
+        <member name="T:API.Controllers.TestController">
+            <summary>
+            Controlleur de test
+            </summary>
+        </member>
+        <member name="M:API.Controllers.TestController.Get(System.String)">
+            <summary>
+             Action pour dire bonjour 
+            </summary>
+            <param name="nom"> Nom à qui dire bonjour </param>
+            <returns> Retourne Bonjour suivi du nom de la peersonne </returns>
+        </member>
+    </members>
+</doc>
